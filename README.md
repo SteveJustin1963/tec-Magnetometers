@@ -18,8 +18,10 @@ To perform experiments with a magnetometer, you would need to set up a test envi
 ## Arduino-Magnetometer
 Its worth looking at this project to glean ideas for the tec-1 
 
-code
+![image](https://user-images.githubusercontent.com/58069246/210121917-d21dcce7-790e-4749-a5c0-1b8761793f53.png)
 
+
+## code
 drawArrow3d() is a function in C++ that appears to be used to draw an arrow on a graphical display, with the arrow pointing in a direction determined by three input values inxx, inyy, and inzz. These input values are assumed to range from 0 to 1023, and correspond to voltages ranging from 0 to 3.3V or 0 to 5V. This code part reads three analog input values inxx, inyy, and inzz from analog pins A1, A2, and A3 respectively. It then converts the values to voltage values vxx, vyy, and vzz by multiplying them by the voltage supply (3.3V or 5V) and dividing them by 1024.
 
 An Arduino is a microcontroller, which is a type of computer that is designed to control electronic devices such as sensors, motors, and displays. It has a number of input and output (I/O) pins that can be used to read and write digital signals, as well as to read and write analog signals through a process called analog-to-digital conversion (ADC).
@@ -52,6 +54,12 @@ void loop() {
 ```
 
 ## cct
+
+![image](https://user-images.githubusercontent.com/58069246/210121928-655f1641-a7d0-48df-80a9-3509c9b9a152.png)
+
+![image](https://user-images.githubusercontent.com/58069246/210121943-2ef4d2bf-0bf1-4e99-be4d-70f6dd9ac0cd.png)
+
+
 It is possible to emulate an ADC (analog-to-digital converter) using a capacitor and resistor. This can be done using a charge-balancing ADC circuit, which measures the time it takes for a capacitor to charge or discharge to a certain voltage level. The capacitor is charged or discharged through a resistor, and the time it takes to reach the voltage level is proportional to the input voltage. By measuring the time it takes for the capacitor to charge or discharge, the input voltage can be approximated.
 
 Here is an example of a charge-balancing ADC circuit using a capacitor and resistor:
@@ -97,6 +105,7 @@ One way to measure the time it takes for the capacitor to charge or discharge is
   loop
 ;
 ```
+
 
 
 
