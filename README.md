@@ -51,6 +51,53 @@ void loop() {
 }
 ```
 
+## cct
+It is possible to emulate an ADC (analog-to-digital converter) using a capacitor and resistor. This can be done using a charge-balancing ADC circuit, which measures the time it takes for a capacitor to charge or discharge to a certain voltage level. The capacitor is charged or discharged through a resistor, and the time it takes to reach the voltage level is proportional to the input voltage. By measuring the time it takes for the capacitor to charge or discharge, the input voltage can be approximated.
+
+Here is an example of a charge-balancing ADC circuit using a capacitor and resistor:
+```
+       5V
+      ----
+      |  |
+      R   C
+      |  |
+      ----
+       0V
+```
+In this circuit, R is the resistor and C is the capacitor. The input voltage is applied across R and C, and the output is taken from the junction between the two components.
+
+To measure the input voltage, the capacitor is charged or discharged through the resistor until it reaches a certain voltage level. The time it takes for the capacitor to reach this voltage level is measured, and the input voltage is approximated based on this time.
+
+One way to measure the time it takes for the capacitor to charge or discharge is to use a microcontroller with a timer function. The microcontroller can be programmed to start the timer when the charging or discharging process begins, and to stop the timer when the capacitor reaches the target
+
+## mint
+```
+\: charge-capacitor ( -- )
+  1 \> \h
+  millis \h !
+  512 < A0 ? until
+  0 \> \h
+;
+
+\: discharge-capacitor ( -- )
+  0 \> \h
+  millis \h !
+  512 > A0 ? until
+;
+
+\: loop ( -- )
+  charge-capacitor
+  \h @ millis - \h !
+  \h @ .
+  1000 ms sleep
+  discharge-capacitor
+  \h @ millis - \h !
+  \h @ .
+  1000 ms sleep
+  loop
+;
+```
+
 
 
 
