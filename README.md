@@ -15,6 +15,12 @@ Magnetic field declination: This is the angle between the magnetic field and tru
 
 To perform experiments with a magnetometer, you would need to set up a test environment that allows you to control or vary one or more of these parameters and measure the response of the magnetometer. This may involve using magnets of different sizes and strengths, positioning the magnetometer at different locations and orientations, or applying external magnetic fields. You would also need to use appropriate measurement tools and techniques, such as a compass, a protractor, or a digital multimeter, to accurately measure the parameters of interest.
 
+## Arduino-Magnetometer
+Its worth looking at this project to gleen ideas for the tec-1
+
+
+
+
 ## Iterate
 - https://github.com/SteveJustin1963/Magnetotelluric
 
@@ -23,4 +29,7 @@ To perform experiments with a magnetometer, you would need to set up a test envi
 ## Ref
 - https://en.wikipedia.org/wiki/Magnetometer
 - https://www.instructables.com/Arduino-Magnetometer/
-- 
+- https://www.falstad.com/vector3dm/
+- https://en.wikipedia.org/wiki/3D_projection
+- https://en.wikipedia.org/wiki/Isometric_projection
+
