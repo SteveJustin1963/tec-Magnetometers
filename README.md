@@ -18,6 +18,41 @@ To perform experiments with a magnetometer, you would need to set up a test envi
 ## Arduino-Magnetometer
 Its worth looking at this project to gleen ideas for the tec-1
 
+code
+
+drawArrow3d() is a function in C++ that appears to be used to draw an arrow on a graphical display, with the arrow pointing in a direction determined by three input values inxx, inyy, and inzz. These input values are assumed to range from 0 to 1023, and correspond to voltages ranging from 0 to 3.3V or 0 to 5V. This code part reads three analog input values inxx, inyy, and inzz from analog pins A1, A2, and A3 respectively. It then converts the values to voltage values vxx, vyy, and vzz by multiplying them by the voltage supply (3.3V or 5V) and dividing them by 1024.
+
+An Arduino is a microcontroller, which is a type of computer that is designed to control electronic devices such as sensors, motors, and displays. It has a number of input and output (I/O) pins that can be used to read and write digital signals, as well as to read and write analog signals through a process called analog-to-digital conversion (ADC).
+
+To read a voltage using an Arduino, you will need to connect the voltage source to one of the Arduino's analog input pins using a voltage divider circuit. The voltage divider circuit is used to scale the input voltage to a range that can be read by the Arduino's ADC.
+
+To read the voltage, you will need to use the Arduino's analogRead() function, which takes the analog input pin number as an argument and returns the ADC value as an integer between 0 and 1023. You can then convert this value to a voltage by multiplying it by the voltage reference (Vref) and dividing by the maximum ADC value (1023).
+
+For example, if the voltage reference is 5V and the ADC value is 512, the input voltage would be:
+
+Voltage = (ADC value * Vref) / 1023
+= (512 * 5V) / 1023
+= 2.5V
+
+Here is an example of code that reads the voltage on analog input pin 0 and prints the result to the serial monitor:
+
+```
+int analogInputPin = 0; // pin connected to the voltage source
+
+void setup() {
+  Serial.begin(9600); // initialize serial communication
+}
+
+void loop() {
+  int adcValue = analogRead(analogInputPin); // read the analog input
+  float voltage = (adcValue * 5.0) / 1023; // convert ADC value to voltage
+  Serial.println(voltage); // print the voltage to the serial monitor
+  delay(1000); // wait for 1 second before taking another reading
+}
+```
+
+
+
 
 
 
