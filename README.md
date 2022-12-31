@@ -14,3 +14,9 @@ Magnetic field inclination: This is the angle between the magnetic field and a r
 Magnetic field declination: This is the angle between the magnetic field and true north, typically measured in degrees or radians. The declination of the magnetic field can be affected by factors such as the Earth's magnetic field and the location of the magnetometer.
 
 To perform experiments with a magnetometer, you would need to set up a test environment that allows you to control or vary one or more of these parameters and measure the response of the magnetometer. This may involve using magnets of different sizes and strengths, positioning the magnetometer at different locations and orientations, or applying external magnetic fields. You would also need to use appropriate measurement tools and techniques, such as a compass, a protractor, or a digital multimeter, to accurately measure the parameters of interest.
+
+
+## Ref
+- https://en.wikipedia.org/wiki/Magnetometer
+- https://www.instructables.com/Arduino-Magnetometer/
+- 
