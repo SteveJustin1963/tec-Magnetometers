@@ -79,32 +79,7 @@ To measure the input voltage, the capacitor is charged or discharged through the
 One way to measure the time it takes for the capacitor to charge or discharge is to use a microcontroller with a timer function. The microcontroller can be programmed to start the timer when the charging or discharging process begins, and to stop the timer when the capacitor reaches the target
 
 ## mint
-```
-\: charge-capacitor ( -- )
-  1 \> \h
-  millis \h !
-  512 < A0 ? until
-  0 \> \h
-;
-
-\: discharge-capacitor ( -- )
-  0 \> \h
-  millis \h !
-  512 > A0 ? until
-;
-
-\: loop ( -- )
-  charge-capacitor
-  \h @ millis - \h !
-  \h @ .
-  1000 ms sleep
-  discharge-capacitor
-  \h @ millis - \h !
-  \h @ .
-  1000 ms sleep
-  loop
-;
-```
+ 
 This Mint code defines three commands: charge-capacitor, discharge-capacitor, and loop. The charge-capacitor command sets the output pin to HIGH, starts the timer, and waits until the input voltage reaches 512. The discharge-capacitor command sets the output pin to LOW, starts the timer, and waits until the input voltage falls below 512. The loop command charges and discharges the capacitor and prints the elapsed time to the serial monitor. It then waits for 1 second before repeating the process.
 
 To convert the elapsed time to an approximation of the input voltage, you can use the following formula:
