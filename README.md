@@ -36,22 +36,7 @@ Voltage = (ADC value * Vref) / 1023
 = (512 * 5V) / 1023
 = 2.5V
 
-Here is an example of code that reads the voltage on analog input pin 0 and prints the result to the serial monitor:
-
-```
-int analogInputPin = 0; // pin connected to the voltage source
-
-void setup() {
-  Serial.begin(9600); // initialize serial communication
-}
-
-void loop() {
-  int adcValue = analogRead(analogInputPin); // read the analog input
-  float voltage = (adcValue * 5.0) / 1023; // convert ADC value to voltage
-  Serial.println(voltage); // print the voltage to the serial monitor
-  delay(1000); // wait for 1 second before taking another reading
-}
-```
+Here is an example of code that reads the voltage on analog input pin 0 and prints the result to the serial monitor: ```rv.c```
 
 ## cct
 
@@ -83,37 +68,9 @@ One way to measure the time it takes for the capacitor to charge or discharge is
 This Mint code defines three commands: charge-capacitor, discharge-capacitor, and loop. The charge-capacitor command sets the output pin to HIGH, starts the timer, and waits until the input voltage reaches 512. The discharge-capacitor command sets the output pin to LOW, starts the timer, and waits until the input voltage falls below 512. The loop command charges and discharges the capacitor and prints the elapsed time to the serial monitor. It then waits for 1 second before repeating the process.
 
 To convert the elapsed time to an approximation of the input voltage, you can use the following formula:
-
-Input voltage = (Elapsed time / Time constant) * Voltage reference
-
+```Input voltage = (Elapsed time / Time constant) * Voltage reference```
 Where the time constant is the product of the resistor and capacitor values (RC), and the voltage reference is the maximum input voltage (in this case, 5V).
-
-```
-\: charge-capacitor ( -- )
-  1 \> \h
-  millis \h !  \ store the start time in the heap
-  512 < A0 ? until
-  0 \> \h
-  \h @ millis - \h !  \ update the elapsed time in the heap
-;
-
-\: discharge-capacitor ( -- )
-  0 \> \h
-  millis \h !  \ store the start time in the heap
-  512 > A0 ? until
-  \h @ millis - \h !  \ update the elapsed time in the heap
-;
-
-\: loop ( -- )
-  charge-capacitor
-  \h @ .  \ print the elapsed time for charging
-  1000 ms sleep
-  discharge-capacitor
-  \h @ .  \ print the elapsed time for discharging
-  1000 ms sleep
-  loop
-;
-```
+```cpr.c```
 
 
 
