@@ -31,11 +31,11 @@ To read a voltage using an Arduino, you will need to connect the voltage source 
 To read the voltage, you will need to use the Arduino's analogRead() function, which takes the analog input pin number as an argument and returns the ADC value as an integer between 0 and 1023. You can then convert this value to a voltage by multiplying it by the voltage reference (Vref) and dividing by the maximum ADC value (1023).
 
 For example, if the voltage reference is 5V and the ADC value is 512, the input voltage would be:
-
+```
 Voltage = (ADC value * Vref) / 1023
 = (512 * 5V) / 1023
 = 2.5V
-
+```
 Here is an example of code that reads the voltage on analog input pin 0 and prints the result to the serial monitor: ```rv.c```
 
 ## cct
@@ -57,24 +57,15 @@ Here is an example of a charge-balancing ADC circuit using a capacitor and resis
       ----
        0V
 ```
-In this circuit, R is the resistor and C is the capacitor. The input voltage is applied across R and C, and the output is taken from the junction between the two components.
+In this circuit, R is the resistor and C is the capacitor. The input voltage is applied across R and C, and the output is taken from the junction between the two components. To measure the input voltage, the capacitor is charged or discharged through the resistor until it reaches a certain voltage level. The time it takes for the capacitor to reach this voltage level is measured, and the input voltage is approximated based on this time. One way to measure the time it takes for the capacitor to charge or discharge is to use a microcontroller with a timer function. The microcontroller can be programmed to start the timer when the charging or discharging process begins, and to stop the timer when the capacitor reaches the target
 
-To measure the input voltage, the capacitor is charged or discharged through the resistor until it reaches a certain voltage level. The time it takes for the capacitor to reach this voltage level is measured, and the input voltage is approximated based on this time.
-
-One way to measure the time it takes for the capacitor to charge or discharge is to use a microcontroller with a timer function. The microcontroller can be programmed to start the timer when the charging or discharging process begins, and to stop the timer when the capacitor reaches the target
-
-## mint
- 
+## MINT
 This Mint code defines three commands: charge-capacitor, discharge-capacitor, and loop. The charge-capacitor command sets the output pin to HIGH, starts the timer, and waits until the input voltage reaches 512. The discharge-capacitor command sets the output pin to LOW, starts the timer, and waits until the input voltage falls below 512. The loop command charges and discharges the capacitor and prints the elapsed time to the serial monitor. It then waits for 1 second before repeating the process.
 
 To convert the elapsed time to an approximation of the input voltage, you can use the following formula:
 ```Input voltage = (Elapsed time / Time constant) * Voltage reference```
 Where the time constant is the product of the resistor and capacitor values (RC), and the voltage reference is the maximum input voltage (in this case, 5V).
-```cpr.c```
-
-
-
-
+```cpr.f```
 
 
 
