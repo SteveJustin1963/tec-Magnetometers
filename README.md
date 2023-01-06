@@ -60,8 +60,8 @@ Here is an example of a charge-balancing ADC circuit using a capacitor and resis
 ```
 In this circuit, R is the resistor and C is the capacitor. The input voltage is applied across R and C, and the output is taken from the junction between the two components. To measure the input voltage, the capacitor is charged or discharged through the resistor until it reaches a certain voltage level. The time it takes for the capacitor to reach this voltage level is measured, and the input voltage is approximated based on this time. One way to measure the time it takes for the capacitor to charge or discharge is to use a microcontroller with a timer function. The microcontroller can be programmed to start the timer when the charging or discharging process begins, and to stop the timer when the capacitor reaches the target
 
-## MINT
-This Mint code defines three commands: charge-capacitor, discharge-capacitor, and loop. The charge-capacitor command sets the output pin to HIGH, starts the timer, and waits until the input voltage reaches 512. The discharge-capacitor command sets the output pin to LOW, starts the timer, and waits until the input voltage falls below 512. The loop command charges and discharges the capacitor and prints the elapsed time to the serial monitor. It then waits for 1 second before repeating the process.
+## This Mint code defines three commands: charge-capacitor, discharge-capacitor, and loop. 
+The charge-capacitor command sets the output pin to HIGH, starts the timer, and waits until the input voltage reaches 512. The discharge-capacitor command sets the output pin to LOW, starts the timer, and waits until the input voltage falls below 512. The loop command charges and discharges the capacitor and prints the elapsed time to the serial monitor. It then waits for 1 second before repeating the process.
 
 To convert the elapsed time to an approximation of the input voltage, you can use the following formula:
 ```Input voltage = (Elapsed time / Time constant) * Voltage reference```
