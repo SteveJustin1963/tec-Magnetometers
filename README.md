@@ -45,7 +45,8 @@ Here is an example of code that reads the voltage on analog input pin 0 and prin
 ![image](https://user-images.githubusercontent.com/58069246/210121943-2ef4d2bf-0bf1-4e99-be4d-70f6dd9ac0cd.png)
 
 
-It is possible to emulate an ADC (analog-to-digital converter) using a capacitor and resistor. This can be done using a charge-balancing ADC circuit, which measures the time it takes for a capacitor to charge or discharge to a certain voltage level. The capacitor is charged or discharged through a resistor, and the time it takes to reach the voltage level is proportional to the input voltage. By measuring the time it takes for the capacitor to charge or discharge, the input voltage can be approximated.
+## emulate an ADC (analog-to-digital converter) 
+using a capacitor and resistor. This can be done using a charge-balancing ADC circuit, which measures the time it takes for a capacitor to charge or discharge to a certain voltage level. The capacitor is charged or discharged through a resistor, and the time it takes to reach the voltage level is proportional to the input voltage. By measuring the time it takes for the capacitor to charge or discharge, the input voltage can be approximated.
 
 Here is an example of a charge-balancing ADC circuit using a capacitor and resistor:
 ```
